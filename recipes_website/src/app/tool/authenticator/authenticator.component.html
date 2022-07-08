@@ -1,0 +1,35 @@
+<div id="authenticator">
+    <mat-card-header id  ="authenticator-content">
+        <mat-card-header>
+            <mat-card-title>{{getStateText()}}</mat-card-title>
+        </mat-card-header>
+        <div *ngIf="isLoginState()">
+            <input #loginEmail placeholder="Elektroninis paštas"/>
+            <br>
+            <input #loginPassword placeholder="Slaptažodis" type="password"/>
+            <br>
+            <button (click)="onLogin(loginEmail, loginPassword)"  mat-flat-button color="warn">Prisijungti</button>
+        </div>
+        <div *ngIf="isRegisterState()">
+            <input #registerEmail placeholder="Elektroninis paštas"/>
+            <br>
+            <input #registerPassword placeholder="Slaptažodis" type="password"/>
+            <br>
+            <input #registerConfirmPassword placeholder="Patvirtinkite slaptažodį" type="password"/>
+            <br>
+            <button (click)="onRegisterClick(registerEmail, registerPassword, registerConfirmPassword) " mat-flat-button color="warn">Registruotis</button>
+        </div>
+        <div *ngIf="isForgotPasswordState()">
+            <input #resetEmail placeholder="Elektroninis paštas" />
+            <br>
+            <button  (click)="onResetClick(resetEmail)" mat-flat-button color="warn">Siųti paskyros atkūrimo laišką</button>
+        </div>
+        <mat-card-actions align="end">
+            <button mat-flat-button (click)="onForgotPasswordClick()">Pamiršote slaptažodį ?</button>
+            <button mat-flat-button (click)="onCreateAccountClick()">Norite susikurti paskyrą ?</button>
+            <button mat-flat-button (click)="onLoginClick()">Prisijungimas</button>
+        </mat-card-actions>
+
+    </mat-card-header>
+
+</div>

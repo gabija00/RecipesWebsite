@@ -1,0 +1,160 @@
+<app-navbar></app-navbar>
+<app-loader *ngIf="showLoader"></app-loader>
+<h1>Įkelti naują receptą</h1>
+<form (ngSubmit)="saveTutorial()" #myForm="ngForm">
+<div class="columns is-tablet">
+    <div class="column is-one-quarter "></div>
+    <div class="column custom-color">
+    <div *ngIf="!submitted">
+
+      <div class="field">
+        <label class="label">Pavadinimas</label>
+        <div class="control ">
+          <input
+          type="text"
+          class="form-control"
+          id="title"
+          #recipeTitle
+          required
+          [(ngModel)]="recipe.title"
+          name="pavadinimas" 
+        />
+          <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Aprašymas</label>
+        <div class="control ">
+          <textarea  type="text"
+          #recipeDescription
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="recipe.description" required
+          name="aprašymas" rows="4" cols="50">
+        </textarea>
+          
+          
+        
+          <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <div class="field">
+        <label class="label">Nuotrauka</label>
+        <div class="control ">
+          <input type="file" #photoSelector accept="image/*" (change)="selectFiles($event)" />
+          
+         <div>
+            <img [src]="preview" class="preview">
+         </div>
+          
+          <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+      <div class="field">
+        <label class="label">Maisto produktai</label>
+        <div class="control ">
+          <textarea type="text"
+          class="form-control"
+          id="foods"
+          #recipeIngredients
+          [(ngModel)]="recipe.foods"
+          name="maisto produktai" rows="4" cols="50">
+        </textarea>
+          
+          <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Gaminimas</label>
+        <div class="control ">
+          <textarea
+          rows="4" cols="50"
+          type="text"
+          #recipeMaking
+          class="form-control"
+          id="making"
+          required
+          [(ngModel)]="recipe.making"
+          name="gaminimas">""</textarea>
+        
+          <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Kategorija</label>
+        <div class="control">
+          <div class="select">
+            <select type="text"
+            class="form-control"
+            id="category"
+            #recipeCategory
+            required
+            [(ngModel)]="recipe.category"
+            name="kategorija">
+              <option>Apkepai</option>
+              <option>Blynai</option>
+              <option>Desertai</option>
+              <option>Gėrimai</option>
+              <option>Karšti patiekalai</option>
+              <option>Uogienės</option>
+              <option>Konservuoti patiekalai</option>
+              <option>Košės</option>
+              <option>Kremai, padažai</option>
+              <option>Picos</option>
+              <option>Pyragai, kepiniai</option>
+              <option>Salotos, mišrainė</option>
+              <option>Sriubos</option>
+              <option>Sumuštiniai</option>
+              <option>Troškiniai</option>
+              <option>Užkandžiai</option>
+              <option>Vegetariški</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-grouped pt-5">
+        <div class="control">
+          <button type="submit"  [disabled]="!myForm.form.valid" class="button is-link" >Išsaugoti</button>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+</form>
+  <app-footer></app-footer>

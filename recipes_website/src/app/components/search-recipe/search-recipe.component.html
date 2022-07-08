@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div >
+    <h1>Raskite receptą pagal ingredientus</h1><br><br><br>
+    <h3>Paieška</h3> 
+    <div class="container">
+        <div class="columns">
+          <div class="column is-one-four">
+            <div class="control has-icons-left has-icons-right">
+                <input  class="input is-focused" type = "text" [(ngModel)] = "searchterm" (keydown) ="searchh($event)" id = "search" placeholder="Įveskite ingredientų pavadinimus">
+            </div>
+          </div>
+        </div>
+      </div>    
+  </div>
+  <!---
+  <ul *ngFor="let item of names"> 
+      <li>{{item.title}}</li>
+  </ul>-->
+  <br>
+  <div class="columns is-multiline">
+    <ng-container *ngFor="let recipe_item of names">
+      <div class="column is-12-mobile is-6-tablet is-3-desktop is-2-fullhd is-2-widescreen" onclick="openTab('b1');" style="background:white;" >
+        <app-recipe-tile  [data]="recipe_item" ></app-recipe-tile>
+      </div>
+    </ng-container>
+  </div>
+<app-footer></app-footer>

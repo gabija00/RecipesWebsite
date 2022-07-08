@@ -1,38 +1,17 @@
-<app-navigation-bar></app-navigation-bar>
+<app-navbar></app-navbar>
 <h1>Receptai, kurie jus galbūt sudomins</h1>
-<div class="container">
-    <div
-      class="row justify-content-around align-items-center"
-      Style="height: 80vh; width:100%"
-    >
-      <div class="col-lg-3 col-md-6 col-sm-12 border">
-        
-      </div>
-    </div>
-  </div>
 
-<mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile >First Grid</mat-grid-tile>
-    <mat-grid-tile >Second Grid</mat-grid-tile>
-    <mat-grid-tile >Third Grid</mat-grid-tile>
-    <mat-grid-tile >Fourth Grid</mat-grid-tile>
-    <mat-grid-tile >Fifth Grid</mat-grid-tile>
-    <mat-grid-tile >Sixth Frid</mat-grid-tile>
-    <mat-grid-tile >First Grid</mat-grid-tile>
-    <mat-grid-tile >Second Grid</mat-grid-tile>
-    <mat-grid-tile >Third Grid</mat-grid-tile>
-    <mat-grid-tile >Fourth Grid</mat-grid-tile>
-    <mat-grid-tile >Fifth Grid</mat-grid-tile>
-    <mat-grid-tile >Sixth Frid</mat-grid-tile>
+  <div class="columns is-multiline is-centered is-flex">
     
-  </mat-grid-list>
+    <ng-container *ngFor="let recipe_item of data">
+      <div class=" column is-12-mobile is-6-tablet is-3-desktop is-2-fullhd is-2-widescreen "onclick="openTab('b1');" style="background:white;" >
+        <app-recipe-tile [data]="recipe_item" [toggle]="recipe_item.favourite"></app-recipe-tile>
+      </div>
+    </ng-container>
+  </div>
   
+   
+    
+
   
-
-
-<p>home works!</p>
 <app-footer></app-footer>

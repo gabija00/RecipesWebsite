@@ -5,15 +5,15 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBvegPIpAyAMui0rUPmIPWBaBQfTkhLXp4",
-    authDomain: "recipes-6824d.firebaseapp.com",
-    databaseURL: "https://recipes-6824d-default-rtdb.europe-west1.firebasedatabase.app/",
-    projectId: "recipes-6824d",
-    storageBucket: "recipes-6824d.appspot.com",
-    messagingSenderId: "405341778676",
-    appId: "1:405341778676:web:35ab659a9acb747ee364a1",
-    measurementId: "G-N06LQRGR78"
+    apiKey: "AIzaSyCpkxaKUlp0b5xWJT39MEoVKHsE7Ez2SHw",
+    authDomain: "recipes-b6aa2.firebaseapp.com",
+    projectId: "recipes-b6aa2",
+    storageBucket: "recipes-b6aa2.appspot.com",
+    messagingSenderId: "585474209545",
+    appId: "1:585474209545:web:429fd68e7d0d85d48bc5d8"
   }
+  
+
 };
 
 /*

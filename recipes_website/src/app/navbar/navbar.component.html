@@ -1,0 +1,61 @@
+<nav class="navbar is-success" role="navigation" aria-label="main navigation" height="40px">
+    <div class="navbar-brand">
+      
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" [routerLink]="'/home-page'">
+          Pagrindinis
+        </a>
+        <a *ngIf="loggedIn()" class="navbar-item" [routerLink]="'/favourite-list'">
+          Įsiminti receptai
+        </a>
+        <a *ngIf="loggedIn()" class="navbar-item" (click)="onNewRecipeClick()">
+          Įkelti receptą
+        </a>
+
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" [routerLink]="'/home-page'">
+              Receptai
+            </a>
+    
+            <div  class="navbar-dropdown">
+              <div *ngFor="let item of categories">
+                <a  (click)="onSelect(item)"  class="navbar-item">
+                  {{item}}
+                </a>
+
+              </div>
+              
+              
+            </div>
+          </div>
+        <a *ngIf="loggedIn()" class="navbar-item" [routerLink]="'/search'">
+            Rasti receptą pagal ingridientus
+        </a>
+        
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a *ngIf="!loggedIn()" class="button is-primary" (click)="onGetStartedClick()" >
+              <strong>Registruotis/Prisijungti</strong>
+            </a>
+            <a *ngIf="loggedIn()" class="button is-primary" (click)="onLogoutClick()" >
+              <strong>Atsijungti</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+

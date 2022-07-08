@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<h1>Jūsų įsiminti receptai</h1>
+<div class="row" >
+  <div class="columns is-multiline">
+    <ng-container *ngFor="let recipe_item of dat">
+      <div class="column is-12-mobile is-6-tablet is-3-desktop is-2-fullhd is-2-widescreen" onclick="openTab('b1');" style="background:white;" >
+        <app-recipe-tile [data]="recipe_item" [toggle]="recipe_item.favourite" ></app-recipe-tile>
+      </div>
+    </ng-container>
+  </div>
+  
+   
+    
+</div>
+<app-footer></app-footer>

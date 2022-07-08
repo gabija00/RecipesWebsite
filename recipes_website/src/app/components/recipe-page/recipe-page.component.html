@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="columns">
+    <div class="column"></div>
+    <div class="column is-three-quarters" align="center">
+
+    <br>
+    <h2 class="title is-2">{{data.title}}</h2>
+    <div class="card-image">
+        <figure class=" img">
+          <img src={{data.photo}} alt="Placeholder image">
+        </figure>
+    </div>
+    
+
+
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-3">Recepto kategorija: {{data.category}}</p>
+            <p> Aprašymas: {{data.description}}</p>
+          </div>
+        </div>
+       <div align="left">
+        <div class="content">
+          <p>Maisto produktai: {{data.foods}}</p>
+
+          <p>Gaminimas :
+              {{data.making}}
+          </p>
+      </div>
+
+       </div>
+        
+      </div>
+    </div>
+    <div class="column"></div>
+  </div>
+  <app-footer></app-footer>

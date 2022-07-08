@@ -1,1 +1,25 @@
-<p>recipe-tile works!</p>
+<div class="card" *ngIf="data!=null">
+    <div class="card-image">
+        <figure class="image is-4by3" width="1280" height="960">
+          <img src={{data.photo}} alt="Placeholder image">
+        </figure>
+        <!---https://bulma.io/images/placeholders/1280x960.png --->
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-3">{{data.title}}</p>
+          </div>
+        </div>
+    
+        <div class="content">
+          {{data.description}}
+        </div>
+      </div>
+    <footer class="card-footer">
+      <div  [ngClass]="{'heart-like-button' : !toggle, 'heart': toggle}" (click)="onPressLike()"></div>
+      <button (click)="onSelect()" class="card-footer-item" type="button" >Peržiūrėti</button>
+      
+    </footer>
+  </div>
+
