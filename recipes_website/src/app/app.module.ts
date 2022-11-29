@@ -29,6 +29,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ReceipeListComponent } from './receipe-list/receipe-list.component';
 import { FavouriteListComponent } from './favourite-list/favourite-list.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
